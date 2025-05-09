@@ -29,7 +29,7 @@ body, html {
   /* Logo Animation */
   .logo {
     width: 150px;
-    animation: fadeInOut 3s ease-in-out;
+    animation: fadeInOut 10s ease-in-out;
   }
   
   @keyframes fadeInOut {
