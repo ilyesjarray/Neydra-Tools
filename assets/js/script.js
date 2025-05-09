@@ -6,16 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const phoneName = document.getElementById("phone-name");
     const phoneBattery = document.getElementById("phone-battery");
 
+    // Flag to prevent repeated transitions
+    let currentScreen = 'launch'; // Tracks the current visible screen
+    let deviceDetected = false; // Flag to track if a device has been detected
+
     // Transition from Launch Screen to Linking Screen
+    const showLinkingScreen = () => {
+        if (currentScreen === 'launch') {
+            launchScreen.classList.add("hidden");
+            linkingScreen.classList.remove("hidden");
+            currentScreen = 'linking';
+            console.log("Transitioned to linking screen");
+        }
+    };
+
+    // Transition to Tools Menu
+    const showToolsMenu = () => {
+        if (currentScreen === 'linking') {
+            linkingScreen.classList.add("hidden");
+            toolsMenu.classList.remove("hidden");
+            currentScreen = 'tools';
+            console.log("Transitioned to tools menu");
+        }
+    };
+
+    // Simulate Launch Screen Animation
     setTimeout(() => {
-        launchScreen.classList.add("hidden"); // Hide launch screen
-        linkingScreen.classList.remove("hidden"); // Show linking screen
-        console.log("Transitioned to linking screen");
-    }, 3000); // Reduced animation time for better user experience
+        showLinkingScreen();
+    }, 3000); // Reduced time for faster transitions
 
     // Polling mechanism to check for connected devices
-    let deviceDetected = false; // Flag to ensure polling stops after detection
-
     async function checkDevices() {
         try {
             const devices = await navigator.mediaDevices.enumerateDevices();
@@ -27,15 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 // Update UI on successful detection
                 successIcon.classList.remove("hidden");
-                linkingScreen.classList.add("hidden");
-                toolsMenu.classList.remove("hidden");
-
-                // Update phone information (mocked for simplicity)
                 phoneName.textContent = `Phone: Connected Device`;
                 phoneBattery.textContent = "Battery: Unknown"; // Replace with real data if possible
 
                 deviceDetected = true; // Stop further polling
-                console.log("Device detected, polling stopped");
+                showToolsMenu();
             }
         } catch (error) {
             console.error("Error detecting devices:", error);
