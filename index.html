@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neydra Tools</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <!-- Launch Screen -->
+  <div id="launch-screen" class="fullscreen black-bg">
+    <img src="assets/images/neydra_logo.png" alt="NEYDRA Logo" class="logo">
+  </div>
+
+  <!-- Linking Screen -->
+  <div id="linking-screen" class="hidden">
+    <div class="notification-panel">
+      <p>Please connect the phone to the USB cable...</p>
+      <div id="success-icon" class="hidden">✔️</div>
+    </div>
+  </div>
+
+  <!-- Tools Menu -->
+  <div id="tools-menu" class="hidden">
+    <h1 id="phone-name">Phone: Not Connected</h1>
+    <h2 id="phone-battery">Battery: --%</h2>
+    <div class="tools">
+      <button>Copy Files</button>
+      <button>Remote Control</button>
+      <button>Phone Terminal</button>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
