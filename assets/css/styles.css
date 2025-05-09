@@ -5,80 +5,81 @@ body, html {
     height: 100%;
     width: 100%;
     font-family: Arial, sans-serif;
-  }
-  
-  .black-bg {
+    background-color: black; /* Ensure black background is always applied */
+    color: white; /* Set default text color for readability */
+}
+
+.black-bg {
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .hidden {
+}
+
+.hidden {
     display: none;
-  }
-  
-  .fullscreen {
+}
+
+.fullscreen {
     width: 100%;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-  }
-  
-  /* Logo Animation */
-  .logo {
+}
+
+/* Logo Animation */
+.logo {
     width: 150px;
     animation: fadeInOut 3s ease-in-out;
-  }
-  
-  @keyframes fadeInOut {
+}
+
+@keyframes fadeInOut {
     0% { opacity: 0; }
     33% { opacity: 1; }
     66% { opacity: 1; }
     100% { opacity: 0; }
-  }
-  
-  /* Notification Panel */
-  .notification-panel {
+}
+
+/* Notification Panel */
+.notification-panel {
     background-color: #222;
     color: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
     animation: slideIn 1s ease-in-out;
-  }
-  
-  .notification-panel p {
+}
+
+.notification-panel p {
     margin: 0;
     font-size: 18px;
-  }
-  
-  #success-icon {
+}
+
+#success-icon {
     font-size: 40px;
     color: green;
     margin-top: 10px;
-  }
-  
-  @keyframes slideIn {
+}
+
+@keyframes slideIn {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-  }
-  
-  /* Tools Menu */
-  #tools-menu {
+}
+
+/* Tools Menu */
+#tools-menu {
     padding: 20px;
     text-align: center;
-    color: white;
-  }
-  
-  #tools-menu h1, #tools-menu h2 {
+}
+
+#tools-menu h1, #tools-menu h2 {
     margin: 10px 0;
-  }
-  
-  .tools button {
+}
+
+.tools button {
     margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-  }
+}
