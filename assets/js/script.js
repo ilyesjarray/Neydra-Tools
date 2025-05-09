@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       launchScreen.classList.add("hidden");
       linkingScreen.classList.remove("hidden");
-    }, 3000);
+    }, 10000);
   
     // Simulate USB Detection
     let tetheringDetected = false;
