@@ -3,36 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Neydra Tools - A tool to connect and control your phone.">
   <title>Neydra Tools</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body class="black-bg">
-  <div id="app-container">
-    <!-- Launch Screen -->
-    <div id="launch-screen" class="fullscreen">
-      <img src="assets/images/neydra_logo.png" alt="NEYDRA Logo" class="logo">
-    </div>
+<body>
+  <!-- Launch Screen -->
+  <div id="launch-screen" class="fullscreen black-bg">
+    <img src="assets/images/neydra_logo.png" alt="NEYDRA Logo" class="logo">
+  </div>
 
-    <!-- Linking Screen -->
-    <div id="linking-screen" class="hidden fullscreen">
-      <div class="notification-panel" role="alert">
-        <p>Please connect the phone to the USB cable...</p>
-        <div id="success-icon" class="hidden" aria-label="Success">✔️</div>
-      </div>
-    </div>
-
-    <!-- Tools Menu -->
-    <div id="tools-menu" class="hidden fullscreen">
-      <h1 id="phone-name">Phone: Not Connected</h1>
-      <h2 id="phone-battery">Battery: --%</h2>
-      <div class="tools">
-        <button aria-label="Copy Files">Copy Files</button>
-        <button aria-label="Remote Control">Remote Control</button>
-        <button aria-label="Phone Terminal">Phone Terminal</button>
-      </div>
+  <!-- Linking Screen -->
+  <div id="linking-screen" class="hidden">
+    <div class="notification-panel">
+      <p>Please connect the phone to the USB cable...</p>
+      <div id="success-icon" class="hidden">✔️</div>
     </div>
   </div>
+
+  <!-- Tools Menu -->
+  <div id="tools-menu" class="hidden">
+    <h1 id="phone-name">Phone: Not Connected</h1>
+    <h2 id="phone-battery">Battery: --%</h2>
+    <div class="tools">
+      <button>Copy Files</button>
+      <button>Remote Control</button>
+      <button>Phone Terminal</button>
+    </div>
+  </div>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html>
