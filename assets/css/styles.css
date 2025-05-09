@@ -5,7 +5,8 @@ body, html {
     height: 100%;
     width: 100%;
     font-family: Cal Sans, sans-serif;
-    color: black;
+    color: white; /* Changed to white for better readability on black background */
+    background-color: black; /* Ensure entire body has a black background */
 }
   
 .black-bg {
@@ -34,7 +35,7 @@ body, html {
 /* Logo Animation */
 .logo {
     width: 150px;
-    animation: fadeInOut 10s ease-in-out;
+    animation: fadeInOut 3s ease-in-out; /* Reduced animation time */
 }
 
 @keyframes fadeInOut {
@@ -46,7 +47,7 @@ body, html {
   
 /* Notification Panel */
 .notification-panel {
-    background-color: black; /* Ensure notification panel blends with background */
+    background-color: black; /* Matches linking-screen background */
     color: red;
     padding: 15px;
     border-radius: 100px;
@@ -56,12 +57,12 @@ body, html {
 
 .notification-panel p {
     margin: 0;
-    font-size: 12px;
+    font-size: 16px; /* Increased font size for better readability */
 }
 
 #success-icon {
     font-size: 20px;
-    color: red;
+    color: green; /* Changed to green to indicate success */
     margin-top: 5px;
 }
 
