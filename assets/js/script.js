@@ -12,30 +12,39 @@ document.addEventListener("DOMContentLoaded", () => {
         linkingScreen.classList.remove("hidden");
     }, 3000);
 
-    // Real USB Detection using WebUSB API
-    async function checkTethering() {
-        try {
-            // Request USB device
-            const device = await navigator.usb.requestDevice({
-                filters: [{ vendorId: 0x1234 }] // Specify a vendorId for your phone (replace with real value)
-            });
+    // Polling mechanism to check for connected devices
+    let previousDevices = [];
 
-            if (device) {
-                // If a device is detected, update UI
+    async function checkDevices() {
+        try {
+            const devices = await navigator.mediaDevices.enumerateDevices();
+            console.log("Connected devices:", devices);
+
+            // Check for new devices
+            if (devices.length > previousDevices.length) {
+                const newDevice = devices[devices.length - 1]; // Simplified logic
+                console.log("New device detected:", newDevice);
+
+                // Update UI on successful detection
                 successIcon.classList.remove("hidden");
                 linkingScreen.classList.add("hidden");
                 toolsMenu.classList.remove("hidden");
 
-                // Update phone information (mocked; replace with actual data)
-                phoneName.textContent = `Phone: ${device.productName}`;
-                phoneBattery.textContent = "Battery: 85%"; // Replace with real battery data if available
+                // Update phone information (mocked for simplicity)
+                phoneName.textContent = `Phone: Connected Device`;
+                phoneBattery.textContent = "Battery: Unknown"; // Replace with real data if possible
             }
+
+            // Update the previous device list
+            previousDevices = devices;
         } catch (error) {
-            console.error("No device connected or detection failed", error);
-            setTimeout(checkTethering, 2000); // Retry after 2 seconds
+            console.error("Error detecting devices:", error);
+        } finally {
+            // Poll again after 2 seconds
+            setTimeout(checkDevices, 2000);
         }
     }
 
-    // Start tethering detection
-    checkTethering();
+    // Start polling for devices
+    checkDevices();
 });
