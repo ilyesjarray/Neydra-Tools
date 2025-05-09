@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: Arial, sans-serif;
+    font-family: Cal Sans, sans-serif;
   }
   
   .black-bg {
@@ -41,8 +41,8 @@ body, html {
   
   /* Notification Panel */
   .notification-panel {
-    background-color: #222;
-    color: black;
+    background-color: black;
+    color: red;
     padding: 10px;
     border-radius: 50px;
     text-align: center;
@@ -51,7 +51,7 @@ body, html {
   
   .notification-panel p {
     margin: 0;
-    font-size: 6px;
+    font-size: 12px;
   }
   
   #success-icon {
