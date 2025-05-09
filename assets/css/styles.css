@@ -29,7 +29,7 @@ body, html {
   /* Logo Animation */
   .logo {
     width: 150px;
-    animation: fadeInOut 3s ease-in-out;
+    animation: fadeInOut 10s ease-in-out;
   }
   
   @keyframes fadeInOut {
@@ -41,7 +41,7 @@ body, html {
   
   /* Notification Panel */
   .notification-panel {
-    background-color: #222;
+    background-color: #999;
     color: white;
     padding: 20px;
     border-radius: 10px;
