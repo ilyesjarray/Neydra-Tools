@@ -9,13 +9,6 @@ body, html {
     color: white; /* Set default text color for readability */
 }
 
-.black-bg {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .hidden {
     display: none;
 }
@@ -26,6 +19,9 @@ body, html {
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Logo Animation */
